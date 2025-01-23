@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class movePlayer : MonoBehaviour
+public class moveBubble : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [Header("VARIABLES")]
+    [Header("VARIALBES")]
     [SerializeField] private int life;
-    [SerializeField][Range(1,20)] private float speed;
-    [SerializeField][Range(1,20)] private float jumpF;
-    private float hmov;
+    [SerializeField][Range(1,20)] private float impulseF;
+    
     private void Awake(){
         rb= GetComponent<Rigidbody2D>();
     }
@@ -20,14 +19,11 @@ public class movePlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Movimiento horizontal
-        hmov= Input.GetAxis("Horizontal");
-        rb.linearVelocity= new Vector2(hmov * speed, rb.linearVelocity.y);
-        //Salto
-        if(Input.GetKeyDown(KeyCode.Space)){
-            rb.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
+        if(Input.GetKeyDown(KeyCode.O)){
+            rb.AddForce(Vector2.up * impulseF, ForceMode2D.Impulse);
         }
     }
+    [ContextMenu("ZERO")]public void ZERO(){transform.position= Vector3.zero;}
     //Getters and Setters
     public void SetLife(int n){life=n;}
     public int GetLife(){return life;}
