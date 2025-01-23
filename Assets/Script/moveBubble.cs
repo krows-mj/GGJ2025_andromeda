@@ -6,6 +6,8 @@ public class moveBubble : MonoBehaviour
     [Header("VARIALBES")]
     [SerializeField] private int life;
     [SerializeField][Range(1,20)] private float impulseF;
+    [SerializeField][Range(0f,1f)] private float speedPercentage;
+    [SerializeField] private Vector2 inCloudSpeed;
     
     private void Awake(){
         rb= GetComponent<Rigidbody2D>();
@@ -23,6 +25,18 @@ public class moveBubble : MonoBehaviour
             rb.AddForce(Vector2.up * impulseF, ForceMode2D.Impulse);
         }
     }
+    public void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.tag =="Cloud"){
+            inCloudSpeed.x= rb.linearVelocity.x;
+            inCloudSpeed.y= rb.linearVelocity.y * speedPercentage;
+        }
+    }
+    public void OnTriggerStay2D(Collider2D col){
+        if(col.gameObject.tag =="Cloud"){
+            rb.linearVelocity= new Vector2(rb.linearVelocity.x, inCloudSpeed.y);
+        }
+    }
+    //public void OnTriggerExit2D(Collider2D col){}
     [ContextMenu("ZERO")]public void ZERO(){transform.position= Vector3.zero;}
     //Getters and Setters
     public void SetLife(int n){life=n;}
