@@ -133,8 +133,8 @@ TextureImporter:
         y: 3
         width: 304
         height: 347
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4194207, y: 0.39999184}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3df4f7b7ea2aee64da168bdb6a96ec50
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_version_mr_dinsky_0: 4942045287255128058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
