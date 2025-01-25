@@ -471,7 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossState: 0
   life: 0
-  speed: 0
+  speed: 1
   target: {fileID: 1172902237}
   ReferencePoints:
   - {fileID: 1126323593}
