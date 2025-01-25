@@ -7,7 +7,7 @@ public class moveBubble : MonoBehaviour
     [SerializeField] private int life;
     [SerializeField][Range(1,20)] private float impulseF;
     [SerializeField][Range(0f,1f)] private float speedPercentage;
-    [SerializeField] private Vector2 inCloudSpeed;
+    private Vector2 inCloudSpeed;
     
     private void Awake(){
         rb= GetComponent<Rigidbody2D>();
