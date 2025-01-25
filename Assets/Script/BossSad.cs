@@ -21,6 +21,7 @@ public class BossSad : MonoBehaviour
     void Start()
     {
         currentPoint= 0;
+        ChangeTimeState();
     }
 
     // Update is called once per frame
@@ -31,8 +32,10 @@ public class BossSad : MonoBehaviour
                 break;
             case State.move:
                 if(Vector3.Distance(transform.position, ReferencePoints[currentPoint].position) >= 1f){
-
+                    transform.position = 
+                    Vector3.MoveTowards(transform.position, ReferencePoints[currentPoint].position, speed);
                 }else{
+                    Debug.Log(Vector3.Distance(transform.position, ReferencePoints[currentPoint].position));
                     NextPoint(); 
                     BossState= State.idle;
                     ChangeTimeState();
@@ -46,26 +49,11 @@ public class BossSad : MonoBehaviour
     }
 
     public void ChangeTimeState(){
-        Tareas.Nueva(Random.Range(1f,1.5f), ChangeState);
+        Tareas.Nueva(Random.Range(2f,4f), ChangeState);
     }
 
     public void ChangeState(){
         BossState= State.move;
-        /*
-        switch (BossState)
-        {
-            case State.idle:
-                break;
-            case State.attack:
-                break;
-            case State.move:
-                break;
-            case State.die:
-                break;
-            default:
-                break;
-        }
-        */
     }
     private void NextPoint(){
         currentPoint= (ReferencePoints.Count <= currentPoint+1)? 0: currentPoint+1;  
