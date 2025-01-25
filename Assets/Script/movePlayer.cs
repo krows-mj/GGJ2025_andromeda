@@ -6,8 +6,8 @@ public class movePlayer : MonoBehaviour
     private SpriteRenderer sr;
     [Header("VARIABLES")]
     [SerializeField] private int life;
-    [SerializeField][Range(1,20)] private float speed;
-    [SerializeField][Range(1,20)] private float jumpF;
+    [SerializeField][Range(1,10)] private float speed;
+    [SerializeField][Range(1,10)] private float jumpF;
     private bool isGround;
     private float hmov;
     private void Awake(){
