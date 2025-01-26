@@ -6,10 +6,14 @@ public class GAMECONTROLLER : MonoBehaviour
     private movePlayer playerScript;
     private moveBubble bubbleScript;
     [Header("Variables en Juego")]
+    public static GAMECONTROLLER inst;
     [SerializeField] private int lifePlayer, lifeBubble, lifeBoss;
     [SerializeField] private bool pausa;
 
     private void Awake(){
+        if(GAMECONTROLLER.inst == null){
+            GAMECONTROLLER.inst= this;
+        }else{ Destroy(gameObject);}
         bossScript= GameObject.Find("BossSandness").gameObject.GetComponent<BossSad>();
         playerScript= GameObject.Find("Player").gameObject.GetComponent<movePlayer>();
         bubbleScript= GameObject.Find("Circle").gameObject.GetComponent<moveBubble>();
