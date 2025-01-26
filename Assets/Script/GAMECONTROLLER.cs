@@ -25,10 +25,13 @@ public class GAMECONTROLLER : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SetPausa(true);
         lifeBoss= 5;
         lifePlayer= 3;
         lifeBubble= 3;
         bossScript.gameObject.SetActive(false);
+        playerScript.gameObject.SetActive(false);
+        bubbleScript.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class GAMECONTROLLER : MonoBehaviour
         bossScript.SetLife(lifeBoss);
         playerScript.SetLife(lifePlayer);
         bubbleScript.SetLife(lifeBubble);
-        
+        SetPausa(false);
     }
     public void IReceivedDamage(TipeObjects obj){
         if(TipeObjects.player == obj) lifePlayer--;
