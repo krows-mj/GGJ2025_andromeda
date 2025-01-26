@@ -37,6 +37,14 @@ public class moveBubble : MonoBehaviour
             inCloudSpeed.x= rb.linearVelocity.x;
             inCloudSpeed.y= rb.linearVelocity.y * speedPercentage;
         }
+        /*
+        if(col.gameObject.tag =="Enemy"){
+            GAMECONTROLLER.inst.IReceivedDamage(GAMECONTROLLER.TipeObjects.bubble);
+            col.enabled= false;
+            ImpulseObject();
+            Tareas.Nueva(1.5f, ActiveCollition);
+        }
+        */
     }
     public void OnTriggerStay2D(Collider2D col){
         if(col.gameObject.tag =="Cloud"){

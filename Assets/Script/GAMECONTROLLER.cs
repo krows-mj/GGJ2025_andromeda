@@ -26,12 +26,15 @@ public class GAMECONTROLLER : MonoBehaviour
     void Start()
     {
         SetPausa(true);
-        lifeBoss= 5;
+        lifeBoss= 1;
         lifePlayer= 3;
         lifeBubble= 3;
         bossScript.gameObject.SetActive(false);
         playerScript.gameObject.SetActive(false);
         bubbleScript.gameObject.SetActive(false);
+        for(int i=0; i<CloudList.Count; i++){
+            CloudList[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -40,10 +43,17 @@ public class GAMECONTROLLER : MonoBehaviour
         
     }
     public void StartGame(){
+        lifeBoss= 1;
+        lifePlayer= 3;
+        lifeBubble= 3;
         bossScript.SetLife(lifeBoss);
         playerScript.SetLife(lifePlayer);
         bubbleScript.SetLife(lifeBubble);
         SetPausa(false);
+        playerScript.gameObject.SetActive(true);
+        bubbleScript.gameObject.SetActive(true);
+        Tareas.Nueva(3f, ActiveBoss);
+        Tareas.Nueva(1f, SpawnCloud);
     }
     public void IReceivedDamage(TipeObjects obj){
         if(TipeObjects.player == obj) lifePlayer--;
@@ -53,7 +63,12 @@ public class GAMECONTROLLER : MonoBehaviour
     public void WinGame(){
         lifeBoss--;
         if(lifeBoss <= 0){
-            Debug.Log("Fin de la partida");
+            uiController.inst.PanelGameWin(true);
+            uiController.inst.PanelMenus(true);
+            bossScript.gameObject.SetActive(false);
+            playerScript.gameObject.SetActive(false);
+            bubbleScript.gameObject.SetActive(false);
+            //Debug.Log("Fin de la partida");
         }
     }
     public void SpawnCloud(){
@@ -66,8 +81,16 @@ public class GAMECONTROLLER : MonoBehaviour
         }
         Tareas.Nueva(Random.Range(3f, 6f), SpawnCloud);
     }
+    public void ActiveBoss(){
+        bossScript.gameObject.SetActive(true);
+    }
     public void GameOver(){
         if(lifePlayer <= 0 || lifeBubble <= 0){
+            uiController.inst.PanelGameOver(true);
+            uiController.inst.PanelMenus(true);
+            bossScript.gameObject.SetActive(false);
+            playerScript.gameObject.SetActive(false);
+            bubbleScript.gameObject.SetActive(false);
             Debug.Log("Fin partida");
         }
     }

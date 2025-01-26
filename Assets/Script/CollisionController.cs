@@ -22,8 +22,8 @@ public class CollisionController : MonoBehaviour
     public void ActiveCollition(){
         col.enabled= true;
     }
-    public void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.tag =="Enemy"){
+    public void OnTriggerEnter2D(Collider2D obj){
+        if(obj.gameObject.tag =="Enemy"){
             GAMECONTROLLER.inst.IReceivedDamage(objectTipe);
             col.enabled= false;
             ImpulseObject();
