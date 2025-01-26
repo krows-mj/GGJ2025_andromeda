@@ -26,7 +26,7 @@ public class moveBubble : MonoBehaviour
     void FixedUpdate()
     {
         if(!GAMECONTROLLER.inst.GetPausa()){
-            if(Input.GetKeyDown(KeyCode.O)){
+            if((Input.GetAxis("Fire2"))>0){//Input.GetKeyDown(KeyCode.O)){
                 rb.AddForce(Vector2.up * impulseF, ForceMode2D.Impulse);
             }
         }

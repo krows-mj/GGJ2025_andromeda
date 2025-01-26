@@ -11,7 +11,7 @@ public class cloudController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Tareas.Nueva(4f, offCloud);
     }
 
     // Update is called once per frame
@@ -23,5 +23,7 @@ public class cloudController : MonoBehaviour
             rb.linearVelocity= Vector2.zero;
         }
     }
-
+    public void offCloud(){
+        gameObject.SetActive(false);
+    }
 }

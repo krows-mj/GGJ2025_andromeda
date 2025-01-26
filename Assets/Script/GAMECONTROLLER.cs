@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GAMECONTROLLER : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GAMECONTROLLER : MonoBehaviour
     public static GAMECONTROLLER inst;
     [SerializeField] private int lifePlayer, lifeBubble, lifeBoss;
     [SerializeField] private bool pausa;
+    [Header("Spawn")]
+    public List<GameObject> CloudList= new List<GameObject>(); 
 
     private void Awake(){
         if(GAMECONTROLLER.inst == null){
@@ -48,6 +51,16 @@ public class GAMECONTROLLER : MonoBehaviour
         if(lifeBoss <= 0){
             Debug.Log("Fin de la partida");
         }
+    }
+    public void SpawnCloud(){
+        for(int i=0; i<CloudList.Count; i++){
+            if(CloudList[i].activeSelf){
+                CloudList[i].transform.position= new Vector3(-9f,Random.Range(-2f, 4f),0f);
+                CloudList[i].SetActive(true);
+                break;
+            }
+        }
+        Tareas.Nueva(Random.Range(3f, 6f), SpawnCloud);
     }
     public void GameOver(){
         if(lifePlayer <= 0 || lifeBubble <= 0){

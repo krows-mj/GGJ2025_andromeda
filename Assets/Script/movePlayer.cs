@@ -24,26 +24,35 @@ public class movePlayer : MonoBehaviour
     void Start()
     {
         life=3;
+        offClaw();
     }
 
     // Update is called once per frame
     void Update(){
-        anim.SetFloat("walk",hmov*hmov);
-        anim.SetBool("jump", !isGround);
-        if(Input.GetKeyDown(KeyCode.A)){
-            if(clawAttack.transform.localPosition.x < 0){
-                movAtt(1);
-            }else{movAtt(-1);}
+        if(!GAMECONTROLLER.inst.GetPausa()){
+            anim.SetFloat("walk",hmov*hmov);
+            anim.SetBool("jump", !isGround);
+            if(Input.GetKeyDown(KeyCode.A)){
+                if(clawAttack.transform.localPosition.x < 0){
+                    movAtt(1);
+                }else{movAtt(-1);}
+            }
+            if(Input.GetKeyDown(KeyCode.D)){
+                if(clawAttack.transform.localPosition.x > 0){
+                    movAtt(1);
+                }else{movAtt(-1);}
+            }
+            //Ataque
+            if((Input.GetAxis("Fire1")) > 0){
+                clawAttack.SetActive(true);
+                Tareas.Nueva(0.3f, offClaw);
+            }
         }
-        if(Input.GetKeyDown(KeyCode.D)){
-            if(clawAttack.transform.localPosition.x > 0){
-                movAtt(1);
-            }else{movAtt(-1);}
-        }
+
     }
     void FixedUpdate()
     {
-        if(GAMECONTROLLER.inst.GetPausa()){
+        if(!GAMECONTROLLER.inst.GetPausa()){
             //Movimiento horizontal
             hmov= Input.GetAxis("Horizontal");
             
@@ -56,9 +65,10 @@ public class movePlayer : MonoBehaviour
 
                 rb.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
             }
-            //Ataque
-            
         }
+    }
+    public void offClaw(){
+        clawAttack.SetActive(false);
     }
     public void movAtt(int n){
         clawAttack.transform.localPosition= new Vector3(
