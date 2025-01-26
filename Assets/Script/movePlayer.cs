@@ -43,9 +43,9 @@ public class movePlayer : MonoBehaviour
                 }else{movAtt(-1);}
             }
             //Ataque
-            if((Input.GetAxis("Fire1")) > 0){
+            if(Input.GetMouseButton(0)){//(Input.GetAxis("Fire1")) > 0){
                 clawAttack.SetActive(true);
-                Tareas.Nueva(0.3f, offClaw);
+                Tareas.Nueva(0.2f, offClaw);
             }
         }
 
@@ -65,6 +65,7 @@ public class movePlayer : MonoBehaviour
 
                 rb.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
             }
+            
         }
     }
     public void offClaw(){

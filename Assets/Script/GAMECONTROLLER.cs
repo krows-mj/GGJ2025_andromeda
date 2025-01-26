@@ -28,6 +28,7 @@ public class GAMECONTROLLER : MonoBehaviour
         lifeBoss= 5;
         lifePlayer= 3;
         lifeBubble= 3;
+        bossScript.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
