@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a381e6550bbc7848b9675e73770d09b
+guid: 18172df661b67ab4cbcddf406f292599
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942045287255128058
-    second: 1_version_mr_dinsky_0
+      213: 100341072362547468
+    second: Jump_cat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_version_mr_dinsky_0
+      name: Jump_cat_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 3
-        width: 304
-        height: 347
-      alignment: 9
-      pivot: {x: 0.4194207, y: 0.3999918}
+        x: 1
+        y: 0
+        width: 356
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af73cb2310ca59440800000000000000
-      internalID: 4942045287255128058
+      spriteID: c092d867cab746100800000000000000
+      internalID: 100341072362547468
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3df4f7b7ea2aee64da168bdb6a96ec50
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1_version_mr_dinsky_0: 4942045287255128058
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

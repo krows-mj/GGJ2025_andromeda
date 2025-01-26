@@ -17,6 +17,11 @@ public class cloudController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.linearVelocity= new Vector2(speed, 0);
+        if(!GAMECONTROLLER.inst.GetPausa()){
+            rb.linearVelocity= new Vector2(speed, 0);
+        }else{
+            rb.linearVelocity= Vector2.zero;
+        }
     }
+
 }

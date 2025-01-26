@@ -19,12 +19,19 @@ public class moveBubble : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+
+    }
     void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.O)){
-            rb.AddForce(Vector2.up * impulseF, ForceMode2D.Impulse);
+        if(!GAMECONTROLLER.inst.GetPausa()){
+            if(Input.GetKeyDown(KeyCode.O)){
+                rb.AddForce(Vector2.up * impulseF, ForceMode2D.Impulse);
+            }
         }
     }
+
     public void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag =="Cloud"){
             inCloudSpeed.x= rb.linearVelocity.x;

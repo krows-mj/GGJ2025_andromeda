@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a381e6550bbc7848b9675e73770d09b
+guid: bcfa9838a65b29748bbfdf75d59cdff5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942045287255128058
-    second: 1_version_mr_dinsky_0
+      213: 5358642887487398618
+    second: 3_walk_cat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_version_mr_dinsky_0
+      name: 3_walk_cat_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 3
-        width: 304
-        height: 347
+        x: 26
+        y: 14
+        width: 323
+        height: 381
       alignment: 9
-      pivot: {x: 0.4194207, y: 0.3999918}
+      pivot: {x: 0.5428397, y: 0.36683366}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af73cb2310ca59440800000000000000
-      internalID: 4942045287255128058
+      spriteID: ad22cda9059bd5a40800000000000000
+      internalID: 5358642887487398618
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3df4f7b7ea2aee64da168bdb6a96ec50
+    spriteID: d3efde15f1a89ef42a28d481c49a8e3a
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1_version_mr_dinsky_0: 4942045287255128058
+      3_walk_cat_0: 5358642887487398618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
